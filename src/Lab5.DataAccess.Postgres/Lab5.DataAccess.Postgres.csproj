@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Lab5.DataAccess.Postgres</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="SqlScripts\script0001-init.sql" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="SqlScripts\script0001-init.sql">
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Dapper" />
+        <PackageReference Include="dbup-postgresql" />
+        <PackageReference Include="Npgsql" />
+        <PackageReference Include="Microsoft.Extensions.Options" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <ProjectReference Include="..\Lab5.Core\Lab5.Core.csproj" />
+    </ItemGroup>
+
+</Project>
